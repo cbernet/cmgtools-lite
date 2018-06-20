@@ -333,10 +333,7 @@ if cmssw:
             comp.files = ['preprocessed_files/'+comp.name+'/cmsswPreProcessing.root']
     else:
         #sequence.append(fileCleaner)
-        prepdir = '$CMSSW_BASE/python/CMGTools/H2TauTau/preprocessor'
-        prepdata = '/'.join([prepdir, 'h2TauTauMiniAOD_mutau_data_cfg.py'])
-        prepmc = '/'.join([prepdir, 'h2TauTauMiniAOD_mutau{tes_string}_cfg.py'.format(tes_string=tes_string)])
-        fname = prepdata if data else prepmc
+        fname = "$CMSSW_BASE/src/CMGTools/H2TauTau/prod/h2TauTauMiniAOD_mutau_data_cfg.py" if data else "$CMSSW_BASE/src/CMGTools/H2TauTau/prod/h2TauTauMiniAOD_mutau{tes_string}_cfg.py".format(tes_string=tes_string)
         preprocessor = CmsswPreprocessor(fname, addOrigAsSecondary=False)
         #selectedComponents[0].files = ['2018-05-22-02/HiggsSUSYBB1000/cmsswPreProcessing.root']
 
